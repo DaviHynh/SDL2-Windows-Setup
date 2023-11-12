@@ -51,6 +51,32 @@ This tutorial assumes that [VS Code](https://code.visualstudio.com/) is already 
 
 ## Setting up SDL2
 
+**The next step is to set up the SDL2 header/library files.**
+
+1. Visit the [website](https://www.libsdl.org/) for SDL2 and under Download, click SDL Releases.
+2. Click on the file named "SDL2-devel-2.28.5-mingw.zip". The version number might be slightly different.
+3. Extract the file.
+4. Inside the SDL2-2.28.5 folder, you should see two different folders containing mingw in the name.
+5. i686-w64-mingw32 contains 32-bit libraries and x86_64-w64-mingw32 contains 64-bit libraries. I use the 64-bit version.
+6. Create a new folder in your C: drive and call it sdl2dev.
+7. Move the lib and include folder from x86_64-w64-mingw32 into the sdl2dev folder.
+8. Notice the bin folder inside x86_64-w64-mingw32. Inside this folder is SDL2.dll.
+9. Whenever you start a new project, make sure to place SDL2.dll in the base directory.
+
+**Extra Notes:**
+
+There is a way to circumvent adding SDL2.dll everytime you start a new project, but I find it simpler to just add it.
+
+Whenever you compile a program with SDL2, you need to include the paths to the SDL2 libraries and header files. An example is shown below.
+
+Placing the libraries/headers in the C: drive makes it easy to include the path for multiple projects. 
+
+You could also place these files in the same directory as the project, but you might need to change the include path when compling with gcc/g++.
+
+**Compiling a Program**
+
+
+
 ## Developing a Sample Program
 
 ## Releasing the Program
