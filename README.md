@@ -67,20 +67,21 @@ This tutorial assumes that [VS Code](https://code.visualstudio.com/) is already 
 3. Extract the file.
 4. Inside the SDL2-2.28.5 folder, you should see two different folders containing mingw in the name.
 5. i686-w64-mingw32 contains 32-bit libraries and x86_64-w64-mingw32 contains 64-bit libraries. I use the 64-bit version.
-6. Create a new folder in your C: drive and call it sdl2dev.
-7. Move the lib and include folder from x86_64-w64-mingw32 into the sdl2dev folder.
-8. Notice the bin folder inside x86_64-w64-mingw32. Inside this folder is SDL2.dll.
-9. Whenever you start a new project, make sure to place SDL2.dll in the base directory.
+6. Inside these folders is an include and lib folder. You need to add them to the base directory for every new project.
+7. You can also add them to a single folder in the base directory. I would name this folder sdl2dev.
+8. You also need to include SDL2.dll in the base directory for every new project. It is located in the bin folder.
+
+The final project workspace should look something like this:
+
+`C:\msys64\home\USER\sdl2\PROJECTNAME` should contain the `sdl2dev` folder, which contains the `include` and `lib` folders.
+
+`C:\msys64\home\USER\sdl2\PROJECTNAME` should also contain SDL2.dll outside of the `sdl2dev` folder.
 
 **Extra Notes:**
 
-There is a way to circumvent adding SDL2.dll everytime you start a new project, but I find it simpler to just add it.
+There is a way to circumvent adding the include/lib folders and SDL2.dll everytime you start a new project, but it requires messing with VS Code .json files.
 
 Whenever you compile a program with SDL2, you need to include the paths to the SDL2 libraries and header files. An example is shown below.
-
-Placing the libraries/headers in the C: drive makes it easy to include the path for multiple projects. 
-
-You could also place these files in the same directory as the project, but you might need to change the include path when compling with gcc/g++.
 
 **Compiling a Program**
 
