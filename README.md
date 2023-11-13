@@ -12,24 +12,33 @@ This tutorial assumes that [VS Code](https://code.visualstudio.com/) is already 
 3. Once the installation is finished, MSYS2 will run the UCRT64 environment.
 4. Ensure everything is up to date by typing the following command:
 
-   `pacman -Suy`
+   ```
+   pacman -Suy
+   ```
 
    More information about updating MSYS2 can be found on this [page](https://www.msys2.org/docs/updating/).
 
-5. Close out of the UCRT64 environment and open the MINGW64 environment by using the windows search bar.
+6. Close out of the UCRT64 environment and open the MINGW64 environment by using the windows search bar.
 
 **Installing necessary packages**
 
 1. Run the following command to install gcc/g++, along with some other necessary tools like make.
 
-   `pacman -S --needed base-devel mingw-w64-x86_64-toolchain`
+   ```
+   pacman -S --needed base-devel mingw-w64-x86_64-toolchain
+   ```
 
-2. When asked to "Enter a selection (default=all)", press enter to accept the default.
-3. Once the install finishes, verify that you have gcc and g++, by running the following:
+3. When asked to "Enter a selection (default=all)", press enter to accept the default.
+4. Once the install finishes, verify that you have gcc and g++, by running the following:
 
-   `gcc --version` and `g++ --version`
+   ```
+   gcc --version
+   ```
+   ```
+   g++ --version
+   ```
 
-4. Optionally, run `pacman -Suy` again to check for updates.
+6. Optionally, run `pacman -Suy` again to check for updates.
 
 **Setting up the workspace**
 
