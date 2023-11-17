@@ -99,7 +99,7 @@ g++ main.cpp -o main -I ./sdl2dev/include/SDL2 -L ./sdl2dev/lib -w -Wl,-subsyste
 ```
 
 ```
-g++ main.cpp -o main -IC: ./sdl2dev/include/SDL2 -LC: ./sdl2dev/include/SDL2 -w -Wl,-subsystem,windows -lmingw32 -lSDL2main -lSDL2
+g++ main.cpp -o main -IC:./sdl2dev/include/SDL2 -LC:./sdl2dev/lib -w -Wl,-subsystem,windows -lmingw32 -lSDL2main -lSDL2
 ```
 
 You can also set up a Makefile to this process easier, especially if your project includes a lot of files.
@@ -107,6 +107,7 @@ You can also set up a Makefile to this process easier, especially if your projec
 **Additional Notes**
 
 You can use -IC: or -I to set the include path for header files. The same goes for library files, with -LC: or -L.
+Note that -IC:/-LC: doesn't need a space before the include path.
 
 I'm using ./ to start the include path from the folder I'm compiling in. If something doesn't work for you, try using the full path to the include/lib files.
 
