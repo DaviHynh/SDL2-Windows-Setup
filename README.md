@@ -80,15 +80,39 @@ The final project workspace should look something like this:
 
 `C:\msys64\home\USER\sdl2\PROJECTNAME` should also contain SDL2.dll outside of the `sdl2dev` folder.
 
+Again, make sure that your project contains the include/lib folders and SDL2.dll. These are important for compiling.
+
 **Extra Notes:**
 
 There is a way to circumvent adding the include/lib folders and SDL2.dll everytime you start a new project, but it requires messing with VS Code .json files. 
 
 Whenever you compile a program with SDL2, you need to include the paths to the SDL2 libraries and header files. An example is shown below.
 
-**Compiling a Program**
+## Compiling a Program
 
+To compile a program, you have a few options. The first is to run a command on the terminal. The second is to use a Makefile.
 
+Both of the below commands work for compiling a program. If your include/library paths are different, make sure to set it correctly.
+
+```
+g++ main.cpp -o main -I ./sdl2dev/include/SDL2 -L ./sdl2dev/lib -w -Wl,-subsystem,windows -lmingw32 -lSDL2main -lSDL2
+```
+
+```
+g++ main.cpp -o main -IC: ./sdl2dev/include/SDL2 -LC: ./sdl2dev/include/SDL2 -w -Wl,-subsystem,windows -lmingw32 -lSDL2main -lSDL2
+```
+
+You can also set up a Makefile to this process easier, especially if your project includes a lot of files.
+
+**Additional Notes**
+
+You can use -IC: or -I to set the include path for header files. The same goes for library files, with -LC: or -L.
+
+I'm using ./ to start the include path from the folder I'm compiling in. If something doesn't work for you, try using the full path to the include/lib files.
+
+-w -Wl,-subsystem,windows are used to suppress warnings and remove a console window.
+
+-lmingw32 -lSDL2main -lSDL2 are some additional flags for linking to SDL2.
 
 ## Developing a Sample Program
 
