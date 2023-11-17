@@ -3,6 +3,8 @@ A guide for setting up SDL2 with C/C++ on Windows 11 using MSYS2 and VS Code.
 
 This tutorial assumes that [VS Code](https://code.visualstudio.com/) is already installed.
 
+Make sure to install the C/C++ extension.
+
 ## Installing MSYS2
 
 **Installing MSYS2**
@@ -67,9 +69,10 @@ This tutorial assumes that [VS Code](https://code.visualstudio.com/) is already 
 3. Extract the file.
 4. Inside the SDL2-2.28.5 folder, you should see two different folders containing mingw in the name.
 5. i686-w64-mingw32 contains 32-bit libraries and x86_64-w64-mingw32 contains 64-bit libraries. I use the 64-bit version.
-6. Inside these folders is an include and lib folder. You need to add them to the base directory for every new project.
-7. You can also add them to a single folder in the base directory. I would name this folder sdl2dev.
-8. You also need to include SDL2.dll in the base directory for every new project. It is located in the bin folder.
+6. Inside these folders is an include and lib folder. There is also a bin folder that contains SDL2.dll.
+7. Create a new folder named `sdl2dev` and drag the include and lib folder into it.
+8. For every new project, include the `sdl2dev` folder and the SDL2.dll file (inside the bin folder) in the base directory.
+9. For simplicity, you can move these files into another folder and copy/paste for any new project.
 
 The final project workspace should look something like this:
 
@@ -79,7 +82,7 @@ The final project workspace should look something like this:
 
 **Extra Notes:**
 
-There is a way to circumvent adding the include/lib folders and SDL2.dll everytime you start a new project, but it requires messing with VS Code .json files.
+There is a way to circumvent adding the include/lib folders and SDL2.dll everytime you start a new project, but it requires messing with VS Code .json files. 
 
 Whenever you compile a program with SDL2, you need to include the paths to the SDL2 libraries and header files. An example is shown below.
 
