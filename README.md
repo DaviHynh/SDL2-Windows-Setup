@@ -42,6 +42,13 @@ Make sure to install the C/C++ extension.
 
 6. Optionally, run `pacman -Suy` again to check for updates.
 
+**Setting up Environment Variables**
+
+1. In the windows search bar, search for `Edit environment variables for your account` and open it.
+2. Click on path, then click edit.
+3. Click new, and add this to the new path: `C:\msys64\mingw64\bin`
+4. Click OK, then OK again to exit out.
+
 **Setting up the workspace**
 
 1. Navigate to the msys2 directory using the file explorer, which is typically located at:
