@@ -67,6 +67,30 @@ Make sure to install the C/C++ extension.
 
 6. You can create a new folder in this directory which will hold all the files for a project.
 
+**(Optional) Adding MSYS2 Terminal to VS Code**
+
+1. Open `Preferences: Open User Settings (JSON)` using the command palette in VS Code. (Ctrl + Shift + P on windows)
+2. Add the following code to the JSON file (inside the curley brackets):
+
+```
+    "terminal.integrated.profiles.windows":
+    {
+        "MSYS2":
+        {
+            "path": "C:\\msys64\\usr\\bin\\bash.exe",
+            "args":["--login","-i"],
+            "env":
+            {
+                "MSYSTEM": "MINGW64",
+                "CHERE_INVOKING": "1"
+            }
+        }
+    },
+    "terminal.integrated.defaultProfile.windows": "MSYS2"
+```
+3. Remove the last line if you don't want MSYS2 as the default terminal.
+4. This code assumes MSYS2 is installed on the default path.
+
 ## Setting up SDL2
 
 **The next step is to set up the SDL2 header/library files.**
